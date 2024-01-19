@@ -3,14 +3,9 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-    stages{
-        stage('sonarqube scan'){
+    stage('all maven commands'){
             steps{
-                withSonarQubeEnv('Sonarserver'){ 
-              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Abz1996_hola'
-              sh 'mvn sonar:sonar'
-            }
+                sh 'mvn clean test compile install package'
             }
         }
-    }
 }
