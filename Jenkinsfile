@@ -7,7 +7,7 @@ pipeline {
         stage('sonarqube scan'){
             steps{
                 withSonarQubeEnv('sonarserver'){ 
-              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kserge2001_week16-code'
+              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Abz1996_hola'
              // sh 'mvn sonar:sonar'
             }
             }
